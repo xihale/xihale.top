@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>/js%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<p>利用 <code>performance</code> 接口即可</p>
+<p><code>performance.getEntries()</code></p>
+<p>具体介绍地址 <a href="https://www.163.com/dy/article/GIE0I3F40531H1T5.html">JavaScript监控网页网络请求</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>通过无备案域名搭建在国内服务器上的网站</title>
     <url>/%E6%9C%80%E6%96%B0%E6%97%A0%E5%A4%87%E6%A1%88%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[<h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>从前，网站只要把端口改掉就能实现访问，但是现在不行了…</p>
@@ -57,57 +65,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Beauty-words</title>
-    <url>/beauty/</url>
-    <content><![CDATA[<h1 id="杂"><a href="#杂" class="headerlink" title="杂"></a>杂</h1><h2 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h2><blockquote>
-<p>送走人间种种别离，送走世间种种变迁，逝者如斯，时光永远不会止步，所以，我们会再度与人萍水相逢，相识相知，一同织下我们的人生</p>
-<p>经为流逝的日月，纬为人们的生业</p>
-<p>逝者如斯夫，不舍昼夜</p>
-<p>时间注定会带走我们的回忆，既然这样，那就让我们在最后的时光里随心所欲地翱翔吧</p>
-</blockquote>
-<h2 id="人生"><a href="#人生" class="headerlink" title="人生"></a>人生</h2><blockquote>
-<p>离别不是失去，而是成长；离别不是终结，而是新生；离别不是放弃，而是成全</p>
-<p>世有伯乐，然后有千里马，千里马常有，而伯乐不常有</p>
-<p>斯是陋室，惟吾德馨</p>
-<p>三军可夺帅也，匹夫不可夺志也</p>
-<p>人不知而不愠，不亦君子乎</p>
-<p>出淤泥而不染，濯清涟而不妖</p>
-<p>谈笑有鸿儒，往来无白丁</p>
-<p>万里星光，一如既往</p>
-<p>生命可以随心所欲，但不能随波逐流</p>
-<p>青春应是一种永恒的心态，它意味着勇敢战胜怯弱，意味着进取战胜安逸</p>
-</blockquote>
-<h2 id="坚持"><a href="#坚持" class="headerlink" title="坚持"></a>坚持</h2><blockquote>
-<p>最长的路也有尽头，最黑暗的夜晚也会迎接清晨</p>
-<p>我对自己说，跨过去，春天不远了，永远不要失去发芽的心情</p>
-<p>虽然绿灯没怎么为我亮过，但我还是对生活充满热情，这就是我理解的年轻</p>
-</blockquote>
-<h2 id="困难-挫折"><a href="#困难-挫折" class="headerlink" title="困难 / 挫折"></a>困难 / 挫折</h2><blockquote>
-<p>没有磨砺的灵魂没有深度，没有风暴的海洋是池塘</p>
-<p>长风破浪会有时，直挂云帆济沧海</p>
-<p>悲痛的事，温柔以对；难过的事，坚强以对</p>
-<p>风会吹走一张白纸，但吹不走一只蝴蝶，因为生命的力量在于不向命运低头</p>
-</blockquote>
-<h2 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h2><blockquote>
-<p>学而不思则罔，思而不学则惑</p>
-<p>三人行，必有我师焉，择其善者而从之，其不善者而改之</p>
-<p>饭疏食，饮水，曲肱而枕之，乐亦在其中矣</p>
-<p>疑惑是成功的钥匙，思考是成功的道路，坚持是成功的大门，我们终将拿起钥匙走过道路打开大门</p>
-</blockquote>
-<h2 id="景色"><a href="#景色" class="headerlink" title="景色"></a>景色</h2><blockquote>
-<p>天空一碧如洗，灿烂的阳光正从密密的松针的缝隙间射下来，形成一束束粗粗细细的光柱，把飘荡着轻纱般薄雾的林荫照的通亮</p>
-<p>雾凇沆砀，天与云与山与水，上下一白，湖上影子，惟长提一痕、湖心亭一点、与余舟一芥、舟中人两三粒而已<sup><a href="#fn_湖心亭看雪" id="reffn_湖心亭看雪">湖心亭看雪</a></sup></p>
-<p>苔痕上阶绿，草色入帘青</p>
-</blockquote>
-<h1 id="解"><a href="#解" class="headerlink" title="解"></a>解</h1><blockquote id="fn_湖心亭看雪">
-<sup>湖心亭看雪</sup>. 湖面上冰花一片弥漫，天与云与山与水，浑然一体，白茫茫一片。湖上的影子，只有一道长堤的痕迹，一点湖心亭的轮廓，和我的一叶小舟，舟中的两三粒人影罢了<br><br>运用白描的写法，由远及近，由大到小，具有很强的视觉效果；写出了环境的空旷以及人在这空旷环境中显得渺小，简直就是沧海一粟，表达了作者<strong>天人合一</strong>和<strong>弃世脱俗</strong>的高雅情怀<a href="#reffn_湖心亭看雪" title="Jump back to footnote [湖心亭看雪] in the text."> &#8617;</a>
-</blockquote>
-]]></content>
-      <categories>
-        <category>写作</category>
-      </categories>
-  </entry>
-  <entry>
     <title>自动 mount</title>
     <url>/auto-mount/</url>
     <content><![CDATA[<h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p>有几个分区得自动<code>mount</code></p>
@@ -136,6 +93,12 @@
       <tags>
         <tag>linux</tag>
       </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/beauty/</url>
+    <content><![CDATA[<p>IntxLNK/ h o m e / x i h a l e / Lhb�/ b e a u t y . m d </p>
+]]></content>
   </entry>
   <entry>
     <title>ES6新特性 - promise</title>
@@ -274,9 +237,9 @@
   <entry>
     <title>Others but important</title>
     <url>/Others%20but%20important/</url>
-    <content><![CDATA[<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script><script>
-            let p=prompt("我的名字");
-            document.querySelector("#article-container").innerHTML=window.CryptoJS.AES.decrypt('U2FsdGVkX1+OX3ZOs7JmFptgr59q7WQ3xuIKctam2Wh7ZmUCLUxpGRV/hnoPAoEuKIrdUpZFYpjLi6Qoq/Ck13CIOHcp/Z/QcMy4a/z3LUoTtegcWasitfa3LaoGphtpQrFzKj0c4KSVokclALV9OYiNgm/PKZxeqiupbkGVF+T1cJHZ5jhmDePDOwz6dyET3aPPE7S8yvivKwFZhQ8e9N+/73nuZap14bCpAedW4nElFHB9YkfiANVCgdsqgxN2n2X9qRxzyNqDq7Iz2WKYyS4lxMzDqH0jmqtYXDmTu2dpYbbHsWakWiJvGevpAiq1FGQVCjHw3G+mmVOAjrbj3ViV/CJHRcshuv1Oc5q5Rp9gDVF7DyP0IUlPagyPQKL0weq+Sr6sv0tlxhPbDXBDCnFLQa23KdCpEKEOmO56Y556GHydeG2cvPZZeCqrpVQMeJwRfl6ZMU7QVdgKyO6NOz/J3g6Ooo6FuWcQzwkjz9W//Ad6pMPM9ZNLjja7y/K1PjgxZGgQLa7Q1K2SrLSsfarizO0iVEe2WIDrvfCAbES6KIlKW5s4nFQLBZJa/w4YMRbJyU8JLQ/TY3f1HlBXU4Lw3zMU9FTetXsskUQU0I/P1YdGxKAiWfyQ8Z/4zFpbfM0DtC7qDd6oHyW/jnEPnW71gpDTpNC6FI2V6qTQo54SmI/qWT9uoaQQ3bi2Mr/n0Ry5xRM84hdq0OobDiJSS3AYpH/ZdlBE5jN/h/9g9cfWPEEbfTaPqOZUy01/gTvOTDQQoystDOZbS0PuFitSifkfn80W1gQ594LQdaJ3q2+w/KgY3/f7qunZtclSc3S0aPXb4Azye7IUPawKfMHzo+YWrWah6ibbsfojD16fFhfjcO4BwmNnM6dmsK2OxX7wgd/4XsB6PefYXMClg6gK7joN1ZXbj5zhHuqi3A19qlbPr46RehZvR+3H4GqGHLflCgYVsmyxo1fAKTxgwCeJS8fGpC28o/PYj0O4aK64ceUanOL/IdHLAvYiTbIQcHBsgTBf8wkkhsFLUtMAnogk8Ni7S1OxgKXNWMy+b4vnlu/0q8kkyvpDaG9bMU/DRIShpoNd7Pof7ULlpR6NZfBQtBIRid91TMCRQqCEvqcTf2AyDD0Z5UtZwnmeRJoIJMqDDz3t+3Ks/hALZYd3lVQUBsixjOboP/FIbSI126i1vDMYwieagBUXqZ7Ol4Pwf1nrMhvMLJ7dd9bJioP67MvxhGNW21zxkuFU3KIAxC+mekzosNldH1SBjSs9PxlPZu/MR+u5HtKAl13KDHFjX+q3Ek2Fep+hgFt6jlOoKO7PFDZOl3eObMwATniW3tY9ce7nLtTjBtrdOCu2RxHTJFswDF9N0D2q8AR97Xw2U/ML4H/ezk2Qg5kIKEGeT+Cdha5D6KoEo++xwJVcKCQWPM8Cns3zWNv/p1iJVwNThjZBHZGqTG8BWIO1A6AEFCLP5P3jri1YqGKmXjCwV3ziDQY7PnZSflm87m+19YbWBNY9N5EdqrIHyvL8F1O+W2owkwLrT5K0qPwJ4YmkkPoAcIYoM5JwE2VMdf8ttcXyOedhPVPC6Z7O3e0k1wJlxB3rR4w10+EO/YIxxzU1T9SJv/oBAy1Vgl9dwKr8E1qaqQhrJ5P14N1akPS3C30k5uoyGWNUZPa2Q+BaHvb5Appvv4x5AowdbUOKuKi/VkqMkHALsZqcVuMYN6U3olfdv92WFPHe+it64jjYqhTXUV2DiZmdw0PVS3PN1f6TpWCXUcHa0c9LoMWowGhqQ+DjaR5XiTcC8opoHE/5MQZxNHS1R9V3oMfDoJeTnSfFlBeZdRUowdxn+P2WNGHLZBMinhznTqkH2oNnSVvpw7sPtbkNYUsd+Q==',p).toString(window.CryptoJS.enc.Utf8)
+    <content><![CDATA[<script src="/Crypto.js"></script><script>
+            let p=prompt("请输入密码!");
+            document.querySelector("#article-container").innerHTML=window.CryptoJS.AES.decrypt('U2FsdGVkX18V6HgYdaBIoWMTleXN86ILbTTx06rSqfCG+93QBuoneTY2tLqTg1NJFKg+sFGEXyXCQTorPIVWJ3N3fJezCjwigO/cEEl7d9FhYUHuhJ8LJP4uFsoXwxYuwzFJn45vdpztp/tgqIh+3YztQ3YrSX9l13XhJWCQKFc1X7Mhvy2kZDRNpWuv7FFB2oIdKRTh3G5VDJr1UyCMJXTDhEoL+55GFddjTgvvVbmpwLrWz4aLPwZtpBRxIIWKyRspam1HQRfD6GjvcDfZKjwlznb7WgH+j4NSyHFac00YoXPf943o3awDkKQMJgIksI/dIGMQHR7rrdUzHFabYRAWwsLCJ9F4vk4b/QVti6/mwlzAH2NjUXsQ4PgxnCbAPwuF2pJB/cLcufkgTEaUNYTW6NBE7CPN94Z9Ol+0JEyEE0jWb6Bly8OHj2Tr4ddcCCw2dMsDe0zCU3XSoR5RqUl4AjFD3Q01FJo8wuF4umdp1f5oq1GO2xl6rBet2mNtolPH8PwVqt3duBA0mS+jWcdvmAPYzSTmHCjhWB56uObdX7pwZ8PWPcfDPnJ+JSHQVe+aMfmr+Js2DObT/uba/DdwC7+Nq0/Mfs9rJpq86Xpls2z1OkGRR0EAXVdJr6OKaCpraVeg6dy177xY/SKAo8NbRfBrmu0gfSeE3NxLlJzIYhWsMVgNCOZhoQYwZXmUbwoCo75aCAm8mD2GspU2cJEIjUqnklGSHgLY9t2g0xO2faQx0+oi/2/SfiIriqQ9HG/ScgEZhK8e1sVYMdSEXg1yArsziu2Np2NXbBQF1jPuJNRmNzRQ7LJ1/1KwS+9n/PDI4bXgGboDXssqAteXEh+yzjI6GE3UAsS0W9Cdf1TnXgOeRyx40I88wbedebndipCh40feCf/n4u0DYEYxZXeRMhlQJKEm90qZhnlkD/QyIWCtcPIhJLatiDc2vvUw01joRTU1MGZxcPGzDk2RqxpjkaAGn+30VpmM7rZlFtmWRUoM6SVPfdvO5lGEb0UclFfO5m0C+KBRITHfz++7k/jb9SPixyl++whV+X7yqHnDKX9nCIhKpsd0cPxtt/bX1AsYmDwjxnnrEWMW+bLTMK8/joK8BNV68qB2RSM/ck8NA9wa7cbKNuVLD+uLF1QYm+WU6iRAounW3BeEc/NiMPRkU+l/3bnyA6+oeDD08f2SE1WyjP4YxpbIXvvNMbZqXQjou16NND59ei/2D5LX2NqIlCjK8yYDTbLnxva5DpUrxlwA4oHbMVLgdG8PsgYdKWLXWsxgiafp64cNePMW6L9agLvZE5D48wnwjaHcCUAZM+g5sRhS2TXHfXZKkaRKARmhaLb82F7Kg66nqoxdqqR8APplNPuW6cZ81Ou5bI1zLQ6OKX17sn0AwW6hN7EAQjdChes4MNfSWLRxZeuTh/8UEl+cejUxWIpVZGS2+DZgRSr3oqP0LAfn8K6pAL736uoi/Xu7U2kKwL+oeEwBpuzL5LjcWkTKiQ78bwNtnixq7e8EqbIyxDgQ/2qKWac87lIv5YWHG/8yTlVZx0SC8MCOjMckL0HSxXqtB9YnA6VEdmidmELQbE60ApJzDq97WwyaH3Je/yqk8hTYmBDUm50bzHCpB8nJoVNSWOvlgPOcy5PSmzs0eMH7dkD8Eg7zZaCVG9cFtK1yJTliVGzo0/XD8HRpmbu91CBR8+iN3PyI56E1i0tG0ApKOSa5dRUhH2PNkRG1N2LQZ9s5X8piElHtaC/k9Ob9JZRxSDpd87Ft+5zVoAvBRP2FSOlZMoBf3envz1QmW+qBTQDWT49I2nMRxLCMjQHaX2cd4HwWmfDvojkNepO5TF6t3B+UF6z/gaVPJQd5JPCxv/lt8V+s6A==',p).toString(window.CryptoJS.enc.Utf8)
         </script>]]></content>
   </entry>
   <entry>
