@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>aur publish</title>
+      <link href="/aur-publish/"/>
+      <url>/aur-publish/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Preface">Preface</h2><p>It’s a very terrible exprience caused by unknown of the rules of <a href="https://wiki.archlinux.org/title/Arch_package_guidelines">Arch package guidelines</a>!</p><h2 id="Important">Important</h2><h3 id="package-naming"><a href="https://wiki.archlinux.org/title/Arch_package_guidelines#Package_naming">package_naming</a></h3><div class="note danger flat"><p>It can only be lowercase!</p></div><h2 id="Start">Start</h2><h3 id="Prepare">Prepare</h3><p>In front of the beginning, you shoud follow this wiki for your authority!<br><a href="https://wiki.archlinux.org/title/AUR_submission_guidelines">AUR_submission_guidelines</a></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git -c init.defaultbranch=master clone ssh://aur@aur.archlinux.org/$YourPackageName.git</span><br></pre></td></tr></table></figure><div class="note danger flat"><p>If there is warnning that <code>git-upload-pack: invalid repository name</code> , you should go back to <a href="https://wiki.archlinux.org/title/AUR_submission_guidelines">AUR_submission_guidelines</a>!</p></div><h3 id="Beginning">Beginning</h3><p>All is in sort!<br>now you can make your PKGBUILD!</p><h3 id="End">End</h3><p>Just publish it!</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">makepkg --printsrcinfo &gt; .SRCINFO</span><br><span class="line">git add PKGBUILD .SRCINFO</span><br><span class="line">git commit -m $UsefulCommitMessage</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> aur arch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Study details</title>
       <link href="/Study-details/"/>
       <url>/Study-details/</url>
