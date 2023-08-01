@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>xmysql-一个简单的mysql类 | 静谧之园</title><meta name="author" content="xihale"><meta name="copyright" content="xihale"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言 最近写一个聊天软件, server 端得用到 mysql 但是c能用的库很少,所以我就对照大佬rotation的c语言库和官方api文档做了个c的库 Bug肯定是还有的,不过正常使用应该没啥问题了 xmysql 123456789101112131415161718192021222324#ifndef XMYSQL#define XMYSQL#include &lt;mysql&#x2F;mysql">
+<meta property="og:type" content="website">
+<meta property="og:title" content="xmysql-一个简单的mysql类">
+<meta property="og:url" content="https://blog.xihale.top/backup/xmysql.html">
+<meta property="og:site_name" content="静谧之园">
+<meta property="og:description" content="前言 最近写一个聊天软件, server 端得用到 mysql 但是c能用的库很少,所以我就对照大佬rotation的c语言库和官方api文档做了个c的库 Bug肯定是还有的,不过正常使用应该没啥问题了 xmysql 123456789101112131415161718192021222324#ifndef XMYSQL#define XMYSQL#include &lt;mysql&#x2F;mysql">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog.xihale.top/images/g.jpeg">
+<meta property="article:published_time" content="2023-08-01T04:09:42.693Z">
+<meta property="article:modified_time" content="2023-08-01T04:07:15.403Z">
+<meta property="article:author" content="xihale">
+<meta property="article:tag" content="c&#x2F;c++">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.xihale.top/images/g.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.xihale.top/backup/xmysql.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancyapps-ui/5.0.19/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":120,"position":"top","messagePrev":"文章已经有","messageNext":"天没有更新了,里面的内容可能已经不再适用了"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":800},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.js',
+      css: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'xmysql-一个简单的mysql类',
+  isPost: false,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-08-01 12:07:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/g.jpeg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光机</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 杂页</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/23%E6%9A%91%E5%81%87%E6%80%BB%E7%BA%B2/"><i class="fa-fw fas fa-sun"></i><span> 暑假总纲</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="静谧之园"><span class="site-name">静谧之园</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时光机</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 杂页</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/23%E6%9A%91%E5%81%87%E6%80%BB%E7%BA%B2/"><i class="fa-fw fas fa-sun"></i><span> 暑假总纲</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="page"><h1 class="page-title">xmysql-一个简单的mysql类</h1><div id="article-container"><h2 id="前言">前言</h2>
+<p>最近写一个聊天软件, server 端得用到 mysql</p>
+<p>但是c<ins>能用的库很少,所以我就对照<a target="_blank" rel="noopener" href="https://blog.csdn.net/fengxinlinux/article/details/75675360">大佬rotation的c语言库</a>和官方api文档做了个c</ins>的库</p>
+<p>Bug肯定是还有的,不过正常使用应该没啥问题了</p>
+<h4 id="xmysql">xmysql</h4>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> XMYSQL</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> XMYSQL</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;mysql/mysql.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> std::string;</span><br><span class="line"><span class="keyword">using</span> std::vector;</span><br><span class="line"><span class="keyword">namespace</span> xihale&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">xmysql</span>&#123;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">        <span class="built_in">xmysql</span>(); <span class="comment">//初始化类</span></span><br><span class="line">        <span class="built_in">xmysql</span>(string host,string username,string password,string dbname,<span class="type">unsigned</span> dbport=<span class="number">0</span>); <span class="comment">//连接数据库</span></span><br><span class="line">        ~<span class="built_in">xmysql</span>(); <span class="comment">//关闭数据库连接</span></span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">(string host,string username,string password,string dbname,<span class="type">unsigned</span> dbport=<span class="number">0</span>)</span></span>; <span class="comment">//连接数据库</span></span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt; <span class="built_in">exec</span>(string _exec); <span class="comment">//执行数据库脚本</span></span><br><span class="line">        <span class="function"><span class="type">const</span> <span class="type">char</span> *<span class="title">error</span><span class="params">()</span></span>; <span class="comment">//获取错误</span></span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">        MYSQL *mysql;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="xmysql-cpp">xmysql.cpp</h4>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;xmysql.h&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> xihale;</span><br><span class="line"><span class="keyword">using</span> std::clog;</span><br><span class="line">xmysql::<span class="built_in">xmysql</span>()&#123;</span><br><span class="line">    mysql=<span class="built_in">mysql_init</span>(<span class="literal">NULL</span>); <span class="comment">//初始化</span></span><br><span class="line">    <span class="keyword">if</span>(mysql==<span class="literal">NULL</span>)<span class="keyword">throw</span> <span class="string">&quot;初始化 mysql 失败&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">xmysql::<span class="built_in">xmysql</span>(string host,string username,string password,string dbname,<span class="type">unsigned</span> <span class="type">int</span> dbport)&#123;</span><br><span class="line">    <span class="built_in">xmysql</span>(); <span class="comment">//初始化</span></span><br><span class="line">    <span class="built_in">init</span>(host,username,password,dbname,dbport);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">xmysql::init</span><span class="params">(string host,string username,string password,string dbname,<span class="type">unsigned</span> <span class="type">int</span> dbport)</span></span>&#123;</span><br><span class="line">    mysql=<span class="built_in">mysql_real_connect</span>(mysql,host.<span class="built_in">c_str</span>(),username.<span class="built_in">c_str</span>(),password.<span class="built_in">c_str</span>(),dbname.<span class="built_in">c_str</span>(),dbport,<span class="literal">NULL</span>,<span class="number">0</span>); <span class="comment">//默认</span></span><br><span class="line">    <span class="keyword">if</span>(mysql==<span class="literal">NULL</span>)<span class="keyword">throw</span> <span class="string">&quot;连接 mysql 失败&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">vector&lt;vector&lt;string&gt;&gt; xmysql::<span class="built_in">exec</span>(string _exec)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">mysql_query</span>(mysql,_exec.<span class="built_in">c_str</span>()))<span class="keyword">throw</span> <span class="string">&quot;数据库语句执行失败&quot;</span>;</span><br><span class="line">    MYSQL_RES *_result=<span class="built_in">mysql_store_result</span>(mysql);</span><br><span class="line">    <span class="keyword">if</span>(_result)&#123;</span><br><span class="line">        <span class="type">int</span> fields=<span class="built_in">mysql_num_fields</span>(_result);</span><br><span class="line">        vector&lt;vector&lt;string&gt;&gt;result;</span><br><span class="line">        MYSQL_ROW row;</span><br><span class="line">        <span class="keyword">while</span>((row=<span class="built_in">mysql_fetch_row</span>(_result)))&#123;</span><br><span class="line">            vector&lt;string&gt;s;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;fields;++i)</span><br><span class="line">                s.<span class="built_in">push_back</span>(row[i]?row[i]:<span class="string">&quot;NULL&quot;</span>);</span><br><span class="line">            result.<span class="built_in">push_back</span>(s);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">mysql_free_result</span>(_result);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">mysql_field_count</span>(mysql)!=<span class="number">0</span>)<span class="keyword">throw</span> <span class="string">&quot;数据库语句执行失败&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> vector&lt;vector&lt;string&gt;&gt;();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">const</span> <span class="type">char</span> *<span class="title">xmysql::error</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">mysql_error</span>(mysql);</span><br><span class="line">&#125;</span><br><span class="line">xmysql::~<span class="built_in">xmysql</span>()&#123;</span><br><span class="line">    <span class="built_in">mysql_close</span>(mysql);</span><br><span class="line">    <span class="built_in">mysql_library_end</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/g.jpeg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">xihale</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xihale"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/xihale" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:xihale.top@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">正在研究 C++ 网络和协程</div></div><div class="sticky_layout"><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a> <a href="/tags/zig-learn/" style="font-size: 1.1em; color: #999">zig learn</a> <a href="/tags/css-learn/" style="font-size: 1.1em; color: #999">css learn</a> <a href="/tags/aur-arch/" style="font-size: 1.1em; color: #999">aur arch</a></div></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">6</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">1.2k</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-08-01T04:11:00.663Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By xihale</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/medium-zoom/1.0.8/medium-zoom.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.2.0/instantpage.min.js" type="module"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.8.3/lazyload.iife.min.js"></script><div class="js-pjax"></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
