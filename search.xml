@@ -239,11 +239,11 @@
     
     
     <entry>
-      <title>hexo plugin build</title>
+      <title>hexo plugin dev</title>
       <link href="/hexo-plugin-build/"/>
       <url>/hexo-plugin-build/</url>
       
-        <content type="html"><![CDATA[<h1>前言</h1><p><code>hexo</code> 的 <code>api</code> 做得太烂了</p><h1>踩坑</h1><h2 id="插件">插件</h2><h3 id="Prepare">Prepare</h3><p>创建插件得是直接在 <code>node_modules</code> 下创建文件夹,否则无法识别!</p>]]></content>
+        <content type="html"><![CDATA[<h1>Preface</h1><p><code>hexo</code> 的 <code>api</code> 做得太烂了</p><h1>踩坑</h1><h2 id="插件">插件</h2><h3 id="在-node-modules-创建插件文件夹-hexo">在 <code>node_modules</code> 创建插件文件夹(<code>hexo-*</code>)</h3><div class="note info modern"><p>建议使用软链接</p></div>  <h3 id="新建文件">新建文件</h3><div class="note info modern index.js flat"><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #98C379">&quot;use struct&quot;</span><span style="color: #ABB2BF">;</span></span><span class="line"></span><span class="line"><span style="color: #E5C07B">hexo</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">extend</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">filter</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">register</span><span style="color: #ABB2BF">(</span></span><span class="line"><span style="color: #ABB2BF">  </span><span style="color: #98C379">&quot;after_post_render&quot;</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75; font-style: italic">data</span><span style="color: #C678DD">=&gt;</span><span style="color: #ABB2BF">{</span></span><span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E5C07B">console</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">log</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">&quot;plugins dev&quot;</span><span style="color: #ABB2BF">);</span></span><span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">data</span><span style="color: #ABB2BF">;</span></span><span class="line"><span style="color: #ABB2BF">  },</span></span><span class="line"><span style="color: #ABB2BF">  </span><span style="color: #D19A66">30</span></span><span class="line"><span style="color: #ABB2BF">); </span></span><span class="line"></span></code></pre></div> <div class="note info modern package.json flat"><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">{</span></span><span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">&quot;name&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;hexo-*&quot;</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">&quot;version&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;0.0.1&quot;</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">&quot;main&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;index.js&quot;</span></span><span class="line"><span style="color: #ABB2BF">}</span></span><span class="line"></span><span class="line"></span></code></pre></div>  <h3 id="添加-钩子">添加&quot;钩子&quot;</h3><p>在博客根目录的 <code>package.json</code> 中 <code>dependencies</code> 中添加 <code>&quot;hexo-*&quot;: &quot;&gt;=0.0.1&quot;</code></p><h3 id="测试">测试</h3><p>运行 <code>hexo g</code><br>查看是否输出 <code>plugins dev</code></p><h3 id="注意事项">注意事项</h3><ul><li>每次写好插件文件都得 <strong>重新</strong> <code>generate</code>, 否则无效</li><li>文件是伪热更新的, 所以只有修改文件才会触发 <code>serve</code> 的 <code>generate</code> 事件</li></ul>]]></content>
       
       
       
@@ -485,10 +485,10 @@
     
     <entry>
       <title>$filedir</title>
-      <link href="/js%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF/"/>
-      <url>/js%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF/</url>
+      <link href="/messages/"/>
+      <url>/messages/</url>
       
-        <content type="html"><![CDATA[<p>利用 <code>performance</code> 接口即可</p><p><code>performance.getEntries()</code></p><p>具体介绍地址 <a href="https://www.163.com/dy/article/GIE0I3F40531H1T5.html">JavaScript监控网页网络请求</a></p>]]></content>
+        <content type="html"><![CDATA[<hr><h2 id="title-Messages-强大的短链程序tag-webcategory-编程-Web">title: Messages-强大的短链程序<br>tag: web<br>category: [编程,Web]</h2><h2 id="前言">前言</h2><p>前一阵子,在网上找<code>链接缩短</code>的开源项目,想搭一个这样的网站</p><p>谁知,要不就是太<code>癃肿</code>(一个链接缩短网站,要注册???),要不就没有我想要的<code>功能</code></p><p>所以,趁着最近学了下<code>PHP</code>的<code>header</code>和<code>PDO</code>(连接<code>mysql</code>的工具),就花了3天写了这个工具</p><h2 id="特色">特色</h2><ol><li>基本功能<code>完全支持</code>+附加了<code>Text</code>(文本)的传递-其实就是<code>xurl</code>和<code>ti</code>的<code>合体</code></li><li>运用了PHP的<code>header</code>,<code>直接显示内容</code>,<code>不搞花里胡哨</code>的-<code>给予用户应得的尊重</code></li><li>运用了<code>$_SERVER</code>-代码部署方便</li></ol><h2 id="部署">部署</h2><p>来到了<code>简单</code>的部署环节(<code>不花里胡哨</code>)</p><ol><li><p>新建一个<code>数据库</code>,<code>用户名</code>和<code>密码</code>自定</p></li><li><p>把<code>数据库</code>,<code>用户名</code>和<code>密码</code>依次填入<code>config.php</code>的<code>dbname</code>,<code>username</code>和<code>password</code></p><blockquote><p>如果<code>数据库</code>不在<code>本地</code>,请修改<code>server</code></p><p>端口号修改的方法: 在<code>server</code>的最后加上<code>;port=端口</code></p></blockquote></li></ol><p>测试一下如果没有问题,就可以用了…</p><h2 id="短链接创建教程">短链接创建教程</h2><ol><li><p>检查你的<code>val</code>是<code>链接</code>和<code>文本(Text)</code></p></li><li><p>选择<code>链接</code>或<code>文本(Text)</code> (如果你的<code>val</code>是<code>多行</code>的就<code>不用管</code>)</p></li><li><p>填表</p></li><li><p>创建</p><blockquote><p>无脑操作,主要是第2步难一点</p></blockquote></li></ol>]]></content>
       
       
       
@@ -498,10 +498,10 @@
     
     <entry>
       <title>$filedir</title>
-      <link href="/messages/"/>
-      <url>/messages/</url>
+      <link href="/js%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF/"/>
+      <url>/js%E8%8E%B7%E5%8F%96%E7%BD%91%E7%BB%9C%E4%BF%A1%E6%81%AF/</url>
       
-        <content type="html"><![CDATA[<hr><h2 id="title-Messages-强大的短链程序tag-webcategory-编程-Web">title: Messages-强大的短链程序<br>tag: web<br>category: [编程,Web]</h2><h2 id="前言">前言</h2><p>前一阵子,在网上找<code>链接缩短</code>的开源项目,想搭一个这样的网站</p><p>谁知,要不就是太<code>癃肿</code>(一个链接缩短网站,要注册???),要不就没有我想要的<code>功能</code></p><p>所以,趁着最近学了下<code>PHP</code>的<code>header</code>和<code>PDO</code>(连接<code>mysql</code>的工具),就花了3天写了这个工具</p><h2 id="特色">特色</h2><ol><li>基本功能<code>完全支持</code>+附加了<code>Text</code>(文本)的传递-其实就是<code>xurl</code>和<code>ti</code>的<code>合体</code></li><li>运用了PHP的<code>header</code>,<code>直接显示内容</code>,<code>不搞花里胡哨</code>的-<code>给予用户应得的尊重</code></li><li>运用了<code>$_SERVER</code>-代码部署方便</li></ol><h2 id="部署">部署</h2><p>来到了<code>简单</code>的部署环节(<code>不花里胡哨</code>)</p><ol><li><p>新建一个<code>数据库</code>,<code>用户名</code>和<code>密码</code>自定</p></li><li><p>把<code>数据库</code>,<code>用户名</code>和<code>密码</code>依次填入<code>config.php</code>的<code>dbname</code>,<code>username</code>和<code>password</code></p><blockquote><p>如果<code>数据库</code>不在<code>本地</code>,请修改<code>server</code></p><p>端口号修改的方法: 在<code>server</code>的最后加上<code>;port=端口</code></p></blockquote></li></ol><p>测试一下如果没有问题,就可以用了…</p><h2 id="短链接创建教程">短链接创建教程</h2><ol><li><p>检查你的<code>val</code>是<code>链接</code>和<code>文本(Text)</code></p></li><li><p>选择<code>链接</code>或<code>文本(Text)</code> (如果你的<code>val</code>是<code>多行</code>的就<code>不用管</code>)</p></li><li><p>填表</p></li><li><p>创建</p><blockquote><p>无脑操作,主要是第2步难一点</p></blockquote></li></ol>]]></content>
+        <content type="html"><![CDATA[<p>利用 <code>performance</code> 接口即可</p><p><code>performance.getEntries()</code></p><p>具体介绍地址 <a href="https://www.163.com/dy/article/GIE0I3F40531H1T5.html">JavaScript监控网页网络请求</a></p>]]></content>
       
       
       
