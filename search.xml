@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>zig debug</title>
+      <link href="/zig-debug/"/>
+      <url>/zig-debug/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Preface">Preface</h2><p>It’s likely to cpp.</p><h2 id="configure">configure</h2><p>via <code>launch.json</code></p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">{</span></span><span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">&quot;version&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;0.2.0&quot;</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">&quot;configurations&quot;</span><span style="color: #ABB2BF">: [</span></span><span class="line"><span style="color: #ABB2BF">    {</span></span><span class="line"><span style="color: #ABB2BF">      </span><span style="color: #E06C75">&quot;name&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;Launch&quot;</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">      </span><span style="color: #E06C75">&quot;type&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;cppdbg&quot;</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">      </span><span style="color: #E06C75">&quot;request&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;launch&quot;</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">      </span><span style="color: #E06C75">&quot;program&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;${workspaceFolder}/zig-out/bin/build&quot;</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">      </span><span style="color: #E06C75">&quot;preLaunchTask&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;build&quot;</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">      </span><span style="color: #E06C75">&quot;cwd&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;${workspaceFolder}&quot;</span></span><span class="line"><span style="color: #ABB2BF">    }</span></span><span class="line"><span style="color: #ABB2BF">  ]</span></span><span class="line"><span style="color: #ABB2BF">}</span></span><span class="line"></span></code></pre><p>via <code>tasks.json</code></p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #ABB2BF">{</span></span><span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">&quot;version&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;2.0.0&quot;</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">  </span><span style="color: #E06C75">&quot;tasks&quot;</span><span style="color: #ABB2BF">: [</span></span><span class="line"><span style="color: #ABB2BF">    {</span></span><span class="line"><span style="color: #ABB2BF">      </span><span style="color: #E06C75">&quot;label&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;build&quot;</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">      </span><span style="color: #E06C75">&quot;type&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;shell&quot;</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">      </span><span style="color: #E06C75">&quot;command&quot;</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">&quot;zig build&quot;</span></span><span class="line"><span style="color: #ABB2BF">    }</span></span><span class="line"><span style="color: #ABB2BF">  ]</span></span><span class="line"><span style="color: #ABB2BF">}</span></span><span class="line"></span></code></pre><p>via <code>build.zig</code></p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">Builder</span><span style="color: #ABB2BF"> = </span><span style="color: #56B6C2">@import</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">&quot;std&quot;</span><span style="color: #ABB2BF">).</span><span style="color: #E06C75">build</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">Builder</span><span style="color: #ABB2BF">;</span></span><span class="line"></span><span class="line"><span style="color: #C678DD">pub</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">fn</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">build</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">b</span><span style="color: #ABB2BF">: </span><span style="color: #56B6C2">*</span><span style="color: #E06C75">Builder</span><span style="color: #ABB2BF">) </span><span style="color: #C678DD">void</span><span style="color: #ABB2BF"> {</span></span><span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">target</span><span style="color: #ABB2BF"> = </span><span style="color: #E06C75">b</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">standardTargetOptions</span><span style="color: #ABB2BF">(.{});</span></span><span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">optimize</span><span style="color: #ABB2BF"> = </span><span style="color: #E06C75">b</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">standardOptimizeOption</span><span style="color: #ABB2BF">(.{});</span></span><span class="line"></span><span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">exe</span><span style="color: #ABB2BF"> = </span><span style="color: #E06C75">b</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">addExecutable</span><span style="color: #ABB2BF">(.{</span></span><span class="line"><span style="color: #ABB2BF">        .</span><span style="color: #E06C75">name</span><span style="color: #ABB2BF"> = </span><span style="color: #98C379">&quot;build&quot;</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">        .</span><span style="color: #E06C75">root_source_file</span><span style="color: #ABB2BF"> = .{ .</span><span style="color: #E06C75">path</span><span style="color: #ABB2BF"> = </span><span style="color: #98C379">&quot;src/main.zig&quot;</span><span style="color: #ABB2BF"> },</span></span><span class="line"><span style="color: #ABB2BF">        .</span><span style="color: #E06C75">target</span><span style="color: #ABB2BF"> = </span><span style="color: #E06C75">target</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">        .</span><span style="color: #E06C75">optimize</span><span style="color: #ABB2BF"> = </span><span style="color: #E06C75">optimize</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">    });</span></span><span class="line"></span><span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">b</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">installArtifact</span><span style="color: #ABB2BF">(</span><span style="color: #E06C75">exe</span><span style="color: #ABB2BF">);</span></span><span class="line"><span style="color: #ABB2BF">}</span></span><span class="line"></span><span class="line"></span></code></pre><p>test file via <code>main.zig</code></p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #C678DD">const</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">std</span><span style="color: #ABB2BF"> = </span><span style="color: #56B6C2">@import</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">&quot;std&quot;</span><span style="color: #ABB2BF">);</span></span><span class="line"></span><span class="line"><span style="color: #C678DD">pub</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">fn</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">main</span><span style="color: #ABB2BF">() </span><span style="color: #C678DD">void</span><span style="color: #ABB2BF"> {</span></span><span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> </span><span style="color: #E06C75">f</span><span style="color: #ABB2BF"> = </span><span style="color: #C678DD">packed</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">struct</span><span style="color: #ABB2BF"> {</span></span><span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">a</span><span style="color: #ABB2BF">: </span><span style="color: #C678DD">u4</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E06C75">b</span><span style="color: #ABB2BF">: </span><span style="color: #C678DD">u4</span><span style="color: #ABB2BF">,</span></span><span class="line"><span style="color: #ABB2BF">    }{ .</span><span style="color: #E06C75">a</span><span style="color: #ABB2BF"> = </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">, .</span><span style="color: #E06C75">b</span><span style="color: #ABB2BF"> = </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF"> };</span></span><span class="line"></span><span class="line"><span style="color: #ABB2BF">    </span><span style="color: #E06C75">std</span><span style="color: #ABB2BF">.</span><span style="color: #E06C75">debug</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">print</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">&quot;{}</span><span style="color: #56B6C2">\n</span><span style="color: #98C379">&quot;</span><span style="color: #ABB2BF">, .{</span><span style="color: #E06C75">f</span><span style="color: #ABB2BF">});</span></span><span class="line"><span style="color: #ABB2BF">}</span></span><span class="line"></span><span class="line"></span></code></pre><p>And then you can set breakpoints to debug it!</p><h2 id="Something-else">Something else</h2><h3 id="gdb">gdb</h3><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #7F848E; font-style: italic"># print veriable via binary based</span></span><span class="line"><span style="color: #61AFEF">-exec</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">print</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">/t</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">f</span></span><span class="line"></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> zig </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>sudoku</title>
       <link href="/sudoku/"/>
       <url>/sudoku/</url>
@@ -646,9 +665,9 @@
       
         <tags>
             
-            <tag> react </tag>
-            
             <tag> web </tag>
+            
+            <tag> react </tag>
             
         </tags>
       
@@ -736,25 +755,6 @@
     
     
     <entry>
-      <title>Java-io</title>
-      <link href="/Java-io/"/>
-      <url>/Java-io/</url>
-      
-        <content type="html"><![CDATA[<h2 id="输入">输入</h2><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #C678DD">import</span><span style="color: #E06C75"> </span><span style="color: #E5C07B">java.util.Scanner</span><span style="color: #ABB2BF">;</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//引入</span></span><span class="line"></span><span class="line"><span style="color: #E5C07B">Scanner</span><span style="color: #E06C75"> input</span><span style="color: #56B6C2">=</span><span style="color: #C678DD">new</span><span style="color: #E06C75"> </span><span style="color: #61AFEF">Scanner</span><span style="color: #E06C75">(</span><span style="color: #E5C07B">System</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">in</span><span style="color: #E06C75">)</span><span style="color: #ABB2BF">;</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//绑定输入流到input</span></span><span class="line"></span><span class="line"><span style="color: #C678DD">int</span><span style="color: #E06C75"> a</span><span style="color: #56B6C2">=</span><span style="color: #E5C07B">input</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">nextInt</span><span style="color: #ABB2BF">();</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//输入int,其他类型以此类推</span></span><span class="line"><span style="color: #E5C07B">String</span><span style="color: #E06C75"> s</span><span style="color: #56B6C2">=</span><span style="color: #E5C07B">input</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">next</span><span style="color: #ABB2BF">();</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//输入String</span></span><span class="line"></span></code></pre><h2 id="输出">输出</h2><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #E5C07B">System</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">out</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">print</span><span style="color: #ABB2BF">(str);</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//直接输出</span></span><span class="line"><span style="color: #E5C07B">System</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">out</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">println</span><span style="color: #ABB2BF">(str);</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//输出加换行</span></span><span class="line"><span style="color: #E5C07B">System</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">out</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">&quot;...&quot;</span><span style="color: #ABB2BF">[,...]);</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//格式化输出,玩过c语言的都深有体会</span></span><span class="line"></span></code></pre>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Electron</title>
       <link href="/Electron/"/>
       <url>/Electron/</url>
@@ -766,6 +766,25 @@
         <tags>
             
             <tag> electron </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java-io</title>
+      <link href="/Java-io/"/>
+      <url>/Java-io/</url>
+      
+        <content type="html"><![CDATA[<h2 id="输入">输入</h2><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #C678DD">import</span><span style="color: #E06C75"> </span><span style="color: #E5C07B">java.util.Scanner</span><span style="color: #ABB2BF">;</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//引入</span></span><span class="line"></span><span class="line"><span style="color: #E5C07B">Scanner</span><span style="color: #E06C75"> input</span><span style="color: #56B6C2">=</span><span style="color: #C678DD">new</span><span style="color: #E06C75"> </span><span style="color: #61AFEF">Scanner</span><span style="color: #E06C75">(</span><span style="color: #E5C07B">System</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">in</span><span style="color: #E06C75">)</span><span style="color: #ABB2BF">;</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//绑定输入流到input</span></span><span class="line"></span><span class="line"><span style="color: #C678DD">int</span><span style="color: #E06C75"> a</span><span style="color: #56B6C2">=</span><span style="color: #E5C07B">input</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">nextInt</span><span style="color: #ABB2BF">();</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//输入int,其他类型以此类推</span></span><span class="line"><span style="color: #E5C07B">String</span><span style="color: #E06C75"> s</span><span style="color: #56B6C2">=</span><span style="color: #E5C07B">input</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">next</span><span style="color: #ABB2BF">();</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//输入String</span></span><span class="line"></span></code></pre><h2 id="输出">输出</h2><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #E5C07B">System</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">out</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">print</span><span style="color: #ABB2BF">(str);</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//直接输出</span></span><span class="line"><span style="color: #E5C07B">System</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">out</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">println</span><span style="color: #ABB2BF">(str);</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//输出加换行</span></span><span class="line"><span style="color: #E5C07B">System</span><span style="color: #ABB2BF">.</span><span style="color: #E5C07B">out</span><span style="color: #ABB2BF">.</span><span style="color: #61AFEF">printf</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">&quot;...&quot;</span><span style="color: #ABB2BF">[,...]);</span><span style="color: #E06C75"> </span><span style="color: #7F848E; font-style: italic">//格式化输出,玩过c语言的都深有体会</span></span><span class="line"></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> java </tag>
             
         </tags>
       
@@ -806,6 +825,25 @@
     
     
     <entry>
+      <title>Messages-强大的短链程序</title>
+      <link href="/messages/"/>
+      <url>/messages/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>前一阵子,在网上找<code>链接缩短</code>的开源项目,想搭一个这样的网站</p><p>谁知,要不就是太<code>癃肿</code>(一个链接缩短网站,要注册???),要不就没有我想要的<code>功能</code></p><p>所以,趁着最近学了下<code>PHP</code>的<code>header</code>和<code>PDO</code>(连接<code>mysql</code>的工具),就花了3天写了这个工具</p><h2 id="特色">特色</h2><ol><li>基本功能<code>完全支持</code>+附加了<code>Text</code>(文本)的传递-其实就是<code>xurl</code>和<code>ti</code>的<code>合体</code></li><li>运用了PHP的<code>header</code>,<code>直接显示内容</code>,<code>不搞花里胡哨</code>的-<code>给予用户应得的尊重</code></li><li>运用了<code>$_SERVER</code>-代码部署方便</li></ol><h2 id="部署">部署</h2><p>来到了<code>简单</code>的部署环节(<code>不花里胡哨</code>)</p><ol><li><p>新建一个<code>数据库</code>,<code>用户名</code>和<code>密码</code>自定</p></li><li><p>把<code>数据库</code>,<code>用户名</code>和<code>密码</code>依次填入<code>config.php</code>的<code>dbname</code>,<code>username</code>和<code>password</code></p><blockquote><p>如果<code>数据库</code>不在<code>本地</code>,请修改<code>server</code></p><p>端口号修改的方法: 在<code>server</code>的最后加上<code>;port=端口</code></p></blockquote></li></ol><p>测试一下如果没有问题,就可以用了…</p><h2 id="短链接创建教程">短链接创建教程</h2><ol><li><p>检查你的<code>val</code>是<code>链接</code>和<code>文本(Text)</code></p></li><li><p>选择<code>链接</code>或<code>文本(Text)</code> (如果你的<code>val</code>是<code>多行</code>的就<code>不用管</code>)</p></li><li><p>填表</p></li><li><p>创建</p><blockquote><p>无脑操作,主要是第2步难一点</p></blockquote></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> web </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>蓝凑云直链解析</title>
       <link href="/python-lanzou/"/>
       <url>/python-lanzou/</url>
@@ -832,25 +870,6 @@
         <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>如果一不小心把电脑的磁盘弄坏了(比如写入文件时突然断电)</p><h2 id="Todo">Todo</h2><p><code>win+x</code>调出<code>PowerShell(管理员)</code></p><p>简单一步搞定</p><blockquote><p>C为坏了的盘符(如果是隐藏的可以先取消隐藏)</p></blockquote><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">chkdsk</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">C:</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">/f</span></span><span class="line"></span></code></pre>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Messages-强大的短链程序</title>
-      <link href="/messages/"/>
-      <url>/messages/</url>
-      
-        <content type="html"><![CDATA[<h2 id="前言">前言</h2><p>前一阵子,在网上找<code>链接缩短</code>的开源项目,想搭一个这样的网站</p><p>谁知,要不就是太<code>癃肿</code>(一个链接缩短网站,要注册???),要不就没有我想要的<code>功能</code></p><p>所以,趁着最近学了下<code>PHP</code>的<code>header</code>和<code>PDO</code>(连接<code>mysql</code>的工具),就花了3天写了这个工具</p><h2 id="特色">特色</h2><ol><li>基本功能<code>完全支持</code>+附加了<code>Text</code>(文本)的传递-其实就是<code>xurl</code>和<code>ti</code>的<code>合体</code></li><li>运用了PHP的<code>header</code>,<code>直接显示内容</code>,<code>不搞花里胡哨</code>的-<code>给予用户应得的尊重</code></li><li>运用了<code>$_SERVER</code>-代码部署方便</li></ol><h2 id="部署">部署</h2><p>来到了<code>简单</code>的部署环节(<code>不花里胡哨</code>)</p><ol><li><p>新建一个<code>数据库</code>,<code>用户名</code>和<code>密码</code>自定</p></li><li><p>把<code>数据库</code>,<code>用户名</code>和<code>密码</code>依次填入<code>config.php</code>的<code>dbname</code>,<code>username</code>和<code>password</code></p><blockquote><p>如果<code>数据库</code>不在<code>本地</code>,请修改<code>server</code></p><p>端口号修改的方法: 在<code>server</code>的最后加上<code>;port=端口</code></p></blockquote></li></ol><p>测试一下如果没有问题,就可以用了…</p><h2 id="短链接创建教程">短链接创建教程</h2><ol><li><p>检查你的<code>val</code>是<code>链接</code>和<code>文本(Text)</code></p></li><li><p>选择<code>链接</code>或<code>文本(Text)</code> (如果你的<code>val</code>是<code>多行</code>的就<code>不用管</code>)</p></li><li><p>填表</p></li><li><p>创建</p><blockquote><p>无脑操作,主要是第2步难一点</p></blockquote></li></ol>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> web </tag>
-            
-        </tags>
       
     </entry>
     
@@ -1033,25 +1052,6 @@
     
     
     <entry>
-      <title>Linux-磁盘分析</title>
-      <link href="/Linux-%E7%A3%81%E7%9B%98%E5%88%86%E6%9E%90/"/>
-      <url>/Linux-%E7%A3%81%E7%9B%98%E5%88%86%E6%9E%90/</url>
-      
-        <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><code>linux</code>占空间过大,需要软件进行分析</p><h2 id="开始">开始</h2><p>安装<code>ncdu</code></p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">apt</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">ndcu</span></span><span class="line"></span></code></pre><p>检测空间</p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">ncdu</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-x</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">/</span></span><span class="line"></span></code></pre>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Onedrive5T(E5的获取)</title>
       <link href="/Onedrive5T/"/>
       <url>/Onedrive5T/</url>
@@ -1063,6 +1063,25 @@
         <tags>
             
             <tag> onedrive </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux-磁盘分析</title>
+      <link href="/Linux-%E7%A3%81%E7%9B%98%E5%88%86%E6%9E%90/"/>
+      <url>/Linux-%E7%A3%81%E7%9B%98%E5%88%86%E6%9E%90/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言">前言</h2><p><code>linux</code>占空间过大,需要软件进行分析</p><h2 id="开始">开始</h2><p>安装<code>ncdu</code></p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">apt</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">install</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">ndcu</span></span><span class="line"></span></code></pre><p>检测空间</p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">ncdu</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-x</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">/</span></span><span class="line"></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
             
         </tags>
       
