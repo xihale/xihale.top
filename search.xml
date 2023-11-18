@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>Manjaro - 高漫M6</title>
+      <link href="/Manjaro-%E9%AB%98%E6%BC%ABM6/"/>
+      <url>/Manjaro-%E9%AB%98%E6%BC%ABM6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Preface">Preface</h2><p>最近有点想画画, 并且有一个数位板设计网页也方便!</p><h2 id="Start-with-高漫M6">Start with 高漫M6</h2><div class="note info modern"><p>因为 这个板子性价比比较高, 所以就用这个了<br>Reference: <a href="https://www.cnblogs.com/eslzzyl/p/17114636.html">在Linux上完美使用高漫M6数位板 - Eslzzyl</a></p></div><h3 id="安装依赖">安装依赖</h3><div class="note info modern"><p>dkms是用来外挂linux内核驱动的一个工具。我们用dkms来外挂Digimend驱动。</p></div><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pacman</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-S</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">dkms</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">linux-headers</span></span><span class="line"></span></code></pre><h3 id="安装驱动">安装驱动</h3><h4 id="clone">clone</h4><div class="note info modern"><p>这里我们使用 <code>inochisa</code> 提供的版本: <a href="https://github.com/inochisa/digimend-kernel-drivers/tree/huion-kd200">digimend-kernel-drivers</a></p></div><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">git</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">clone</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">git@github.com:inochisa/digimend-kernel-drivers.git</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-b</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">huion-kd200</span></span><span class="line"></span></code></pre><h4 id="install">install</h4><div class="note info modern"><p>这里如果报错, 则先运行(在 <code>digimend-kernel-drivers</code> 目录下), 删除一下 cached 文件等</p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">make</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">dkms_uninstall</span></span><span class="line"></span></code></pre></div><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #56B6C2">cd</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">digimend-kernel-drivers</span></span><span class="line"><span style="color: #61AFEF">make</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">dkms_install</span></span><span class="line"></span></code></pre><h3 id="重启内核模块">重启内核模块</h3><div class="note info modern"><p>直接 <code>reboot</code> 重启电脑也行</p></div><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">modprobe</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-r</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">hid-kye</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">hid-uclogic</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">hid-polostar</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">hid-viewsonic</span></span><span class="line"></span></code></pre><h3 id="测试">测试</h3><p>安装一个笔记软件 <code>Xournal++</code> 试着写一写</p><div class="note info modern"><p>设置里面可以调整各项参数(比如高亮光标位置, 这样更好看清)</p></div><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">sudo</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pacman</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-S</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">xournalpp</span></span><span class="line"></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> manjaro </tag>
+            
+            <tag> drawing </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>cpp details</title>
       <link href="/cpp-details/"/>
       <url>/cpp-details/</url>
