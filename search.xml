@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>linux - 安装驱动后无法启动</title>
+      <link href="/linux-cannot-poweron/"/>
+      <url>/linux-cannot-poweron/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Preface">Preface</h2><p>手贱安装了 一些 <code>video-xxx</code> 驱动, 结果电脑无法启动</p><div class="note info modern"><p>Reference: <a href="https://www.cnblogs.com/oloroso/p/14229315.html">Manjaro Linux 更新后无法启动问题</a></p></div>  <h2 id="Solution">Solution</h2><h3 id="Live-Environment">Live Environment</h3><p>随便找一个 <code>linux live</code> 环境进入(建议使用轻量的 <code>arch iso</code>)</p><h3 id="partition-file">partition file</h3><p>首先要找到你的系统分区</p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">lsblk</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-f</span><span style="color: #ABB2BF"> | </span><span style="color: #61AFEF">grep</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">ext4</span></span><span class="line"></span></code></pre><div class="note info modern"><p>替代方案:</p><ol><li><code>sudo fdisk -l</code></li><li><code>sudo sfdisk -l</code></li><li><code>sudo cfdisk</code> (<s>甚至可以用 <code>cfdisk</code>, 如果你想的话</s>)</li></ol></div><h3 id="mount">mount</h3><p>自己随便找一个文件夹 <code>mount</code>, 我就照我的习惯写了</p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">mkdir</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">manjaro</span></span><span class="line"><span style="color: #61AFEF">mount</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">/dev/sda2</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">manjaro</span></span><span class="line"></span></code></pre><h3 id="chroot">chroot</h3><p>直接进入你的 <code>system</code>!</p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">chroot</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">manjaro</span></span><span class="line"></span></code></pre><h3 id="Restore">Restore</h3><p>最后的步骤, 直接用 <code>mhwd</code> 删除导致无法开机的驱动即可</p><p>先找到驱动名字</p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">mhwd</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">--listinstalled</span></span><span class="line"></span></code></pre><div class="note info modern"><p>Output e.g.<br>这里导致我无法启动的驱动分别是 <code>video-modesetting</code> 和 <code>video-vesa</code>, 那么就删除这两个即可</p><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #abb2bf">---------------------------------------------------</span></span><span class="line"><span style="color: #abb2bf">NAME               VERSION     FREEDRIVER   TYPE</span></span><span class="line"><span style="color: #abb2bf">---------------------------------------------------</span></span><span class="line"><span style="color: #abb2bf">video-linux        2018.05.04  true         PCI</span></span><span class="line"><span style="color: #abb2bf">video-modesetting  2020.01.13  true         PCI</span></span><span class="line"><span style="color: #abb2bf">video-vesa         2017.03.12  true         PCI</span></span><span class="line"><span style="color: #abb2bf"></span></span></code></pre></div><pre class="shiki one-dark-pro" style="background-color: #282c34" tabindex="0"><code><span class="line"><span style="color: #61AFEF">mhwd</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">-r</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">pci</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">video-modesetting</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">video-vesa</span></span><span class="line"></span></code></pre><h3 id="reboot">reboot</h3><p>完结撒花🎉! (<s>这个 emoji 居然叫 <code>拉炮彩带</code></s>)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> drive </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>母校 - SSL Future School</title>
+      <link href="/SSLFutureSchool/"/>
+      <url>/SSLFutureSchool/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Preface">Preface</h2><p>已经在 <code>东莞松山湖未来学校</code> 生活了将近一年半了, 我相信我已经有能力比较客观地评价这所学校了(<s>其实还是带有很强的主观色彩的, 不过我尽量吧!</s>)</p><div class="note info modern"><p>别的学校没人写, 不代表没有这些 优势/问题, 请理性看待这篇博文!</p></div><h2 id="重要因素">重要因素</h2><h3 id="师资力量">师资力量</h3><blockquote><p>我平时不会额外扩展我的关系圈, 以下是我在我认识的十几个老师中体验到的</p></blockquote><p>总评: <code>优秀</code></p><p>非常优秀的老师(无论是在学科功底、工作能力还是见识、胸怀和想象力等都十分令人佩服):</p><ol><li>韩如冰老师: 他的高等数学和初等数论真的将得很好, 平时讲课水平我不清楚, 毕竟我没上过他讲的普通课程</li><li>阿九老师: 哲学功底、学科能力 很强, 语文课讲得很有趣(来自一个不喜欢语文的理科生之肺腑之言 <s>发呆率起码下降了 .7</s>), 与学生打成一片, 属于当代教育中的典范(至少我这么认为的)</li><li>…</li></ol><p>综合来看:</p><ol><li>很多老师会熬夜加班处理事务</li><li>学生疑问解惑很及时</li></ol><p>在我遇到的众多老师中的总况, 我可以用这么几个词形容: <code>敬业</code> <code>友善</code> <code>幽默</code> <code>善交</code></p><p>当然也有比较 <code>水</code> 的老师, 不过实在是很少, 在此为表尊重不展开</p><h3 id="时间安排">时间安排</h3><p>挺紧的, 工作日一般晚修做完作业还剩 <code>-20~30</code> 分钟(这是我的情况, 不过也不会偏颇太大, 高一时间则会多一些)</p><p>周六, 高一 <code>9:30</code>, 高二 <code>10:30</code>(要考两场试, 缩水的[英语/语文]+完整的数学)</p><p>周日下午 <code>6:30</code> 前到教室</p><h3 id="专车">专车</h3><p>东莞巴士有很多从各种地方来去学校的专车, 挺方便</p><h3 id="宿舍">宿舍</h3><p><code>6</code> 人间, <code>朴素</code> 的小房间, 没有洗衣机, 水槽容易脏, 建议入住时把水槽那个圆形的闭水口拆掉(不知道为什么会在这里设计这个东西, 反正你如果不拆的话, 清理起来可是很难受的喔~)</p><h4 id="厕所">厕所</h4><p>花洒水 <code>时冷时热</code>, 洗澡的时候要 <code>格外小心</code>, 务必打起十二分精神!</p><h3 id="竞赛">竞赛</h3><p>可以逃掉一些 <s>无所谓有无所谓无</s> 的活动, 学校提供场地<s>和电脑</s>, 用来打打算法(<s>挑战自我</s>)是再好不过的选择了!</p><h2 id="其他因素">其他因素</h2><h3 id="硬件">硬件</h3><blockquote><p>来源于以往的观察</p></blockquote><h4 id="足球场之草坪">足球场之草坪</h4><p>有些地方秃顶了, 草质不是很好的样子(我不太懂这方面, 自己过来看吧)</p><h4 id="问学平台">问学平台</h4><p>可以用来问学习上的问题(集思广益, 当然也会有老师回答), 也可以用来寻乐子</p><p>老师有时候会在上面出题</p><h4 id="门禁系统">门禁系统</h4><p>是 <code>DingTalk</code> 提供的服务 <s>, 很难破解</s></p><h4 id="门锁">门锁</h4><p><code>电磁铁</code>锁门系统(发热并且持续功耗) <s>我见过的人类史上最愚蠢的设计之一</s></p><h4 id="电梯">电梯</h4><p>只有宿舍电梯在周末返校和离校需要拿箱子时开放, 其他时间其他地点皆需要老师刷脸使用(学校的措辞是: 为了安全。 虽然我不坐电梯, 但我对这个措辞完全不认可)</p><h4 id="平板">平板</h4><p>与 <code>墨痕</code> 合作, 生产力啥的别想了, 用这个做笔记不如写在本子上<s>然后抄录到 <code>Obsidian</code></s></p><p>不过可以用这个来看老师下发的 <code>word,ppt,images,...</code><br><s>平时用来读 「CSS揭秘」 「Modern Effective C++」 等代码高亮在 <code>Kindle</code> 无法正常显示的编程书籍是再好不过的选择了!</s></p><h3 id="周旋">周旋</h3><h4 id="午休-to-自习">午休 to 自习</h4><p>这个现在不知道是否在执行, 简单来说就是我们有的同学想中午不睡觉去自习, 然而学校为了方便管理采用了一刀切的形式管理(如果你选择了自习那你以后都别睡午觉了, 成功地使提出者们全部都不愿意参加 <s>, 包括我</s>)</p><h4 id="周六留校">周六留校</h4><p>我们学校的学生很多都住得比较远(我每个周末来去需要 <code>6h</code>(公交车, 因为家长忙))<br>然而学校几乎都是 <code>周六早10:30</code> - <code>周日晚5:30</code> 的放假安排<br>去除吃饭睡觉时间, 我就算不写作业整个周末也是精疲力竭, 更别说做我的项目(每次都是赶着做的)<br>提一嘴: 今天我 <code>2:30</code> 才到家, 周六已经快结束了, 明天 <code>2:30</code> 就又要出发了</p><h3 id="形式-面子-饼">形式(面子/饼)</h3><p>面对在这个问题, 我只是感到很无力, 我见过的 <code>政治家</code> 几乎都是画饼出身的, 几乎没多少人实干, 这或许不是我们学校的个例问题, 但也不应该因此回避</p><h4 id="礼服">礼服</h4><p><s>不穿西式礼服==不爱国?</s><br><s>可是我看老师们、领导们都不跟唱国歌诶</s></p><h4 id="未来币">未来币</h4><p>烂尾楼好歹盖了一个毛坯房, 这个连地基都没打好, 虽然我对这个项目也没多少设想就是了(<s>从被提出那一刻起就是完全错误的决定呢!</s>)</p><h4 id="游泳池">游泳池</h4><p>没放过一次水(<s>上级领导检查时除外</s>)<br>虽然我平时不游泳, 但是 “炮可以不用, 但是不能没有, 更不能画饼式搪塞过关”</p><h3 id="导师制">导师制</h3><p>中规中矩, 如果你能选到一个好的导师的话, 那么你每个星期有 [高一: 2节课, 高二: 1节课] 左右的时间上导师课</p><h3 id="校本课">校本课</h3><p>这个跟导师制差不多吧, 不过是人多了, 并且讲的内容不针对个体, 并且没有导师任务了</p><h2 id="结语">结语</h2><div class="note info modern"><p>先写到这里, 以后再写</p></div>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Manjaro - 高漫M6</title>
       <link href="/Manjaro-%E9%AB%98%E6%BC%ABM6/"/>
       <url>/Manjaro-%E9%AB%98%E6%BC%ABM6/</url>
@@ -179,7 +217,7 @@
       
       <categories>
           
-          <category> OI </category>
+          <category> 算法 </category>
           
       </categories>
       
@@ -204,9 +242,9 @@
       
       <categories>
           
-          <category> OI </category>
-          
           <category> math </category>
+          
+          <category> 算法 </category>
           
       </categories>
       
@@ -252,7 +290,7 @@
       
       <categories>
           
-          <category> OI </category>
+          <category> 算法 </category>
           
       </categories>
       
@@ -277,7 +315,7 @@
       
       <categories>
           
-          <category> OI </category>
+          <category> 算法 </category>
           
       </categories>
       
@@ -331,7 +369,7 @@
           
           <category> math </category>
           
-          <category> OI </category>
+          <category> 算法 </category>
           
       </categories>
       
@@ -362,7 +400,7 @@
       
       <categories>
           
-          <category> OI </category>
+          <category> 算法 </category>
           
       </categories>
       
@@ -1360,7 +1398,7 @@
       <link href="/css/custom.css"/>
       <url>/css/custom.css</url>
       
-        <content type="html"><![CDATA[#footer {  background: rgba(255, 255, 255, 0.15);  color: #000;  border-top-right-radius: 20px;  border-top-left-radius: 20px;  backdrop-filter: saturate(100%) blur(5px);}#footer::before {  background: rgba(255, 255, 255, 0.15);}#footer #footer-wrap {  color: var(--font-color);}#footer #footer-wrap a {  color: var(--font-color);}@font-face {  font-family: "Segoe UI";  src: url("/fonts/Segoe UI.ttf");}@font-face {  font-family: "FiraCode-Light";  src: url("/fonts/FiraCode-Light.ttf");}@font-face {  font-family: "FiraCode-Medium";  src: url("/fonts/FiraCode-Medium.ttf");}@font-face {  font-family: "HanyiSummerPalace";  src: url("/fonts/HanyiSummerPalace.ttf");}.recent-post-item {  max-height: 360px;}*::selection {  background-color: rgba(93, 166, 255, 0.6);  color: auto;}/* 宽度美化 */.layout {  max-width: 1500px;}.aside-content{    max-width:380px;    min-width:300px;}.recent-posts{  width:auto!important;}@media screen and (max-width: 900px){    .card-widget:not(#card-toc){        display:none!important;    }}.task-list-item{  list-style: none;}h1, h2, h3, h4, h5, h6, .article-title, .post-title, .toc, .content, a{  font-family: 'FiraCode-Light', monospace;}]]></content>
+        <content type="html"><![CDATA[#footer {  background: rgba(255, 255, 255, 0.15);  color: #000;  border-top-right-radius: 20px;  border-top-left-radius: 20px;  backdrop-filter: saturate(100%) blur(5px);}#footer::before {  background: rgba(255, 255, 255, 0.15);}#footer #footer-wrap {  color: var(--font-color);}#footer #footer-wrap a {  color: var(--font-color);}@font-face {  font-family: "Segoe UI";  src: url("/fonts/Segoe UI.ttf");}@font-face {  font-family: "FiraCode-Light";  src: url("/fonts/FiraCode-Light.ttf");}@font-face {  font-family: "FiraCode-Medium";  src: url("/fonts/FiraCode-Medium.ttf");}@font-face {  font-family: "HanyiSummerPalace";  src: url("/fonts/HanyiSummerPalace.ttf");}.recent-post-item {  max-height: 360px;}*::selection {  background-color: #18696529;  color: unset;}[data-theme='dark'] *::selection{  background-color: #146b673b;}#article-container a{  color: #055795;}[data-theme="dark"] #article-container a{  color: #49b1f5;}[data-theme='dark'] div.note.info.modern{  background: #222427;  filter: none;  color: #4ea7d3;}/* 宽度美化 */.layout {  max-width: 1500px;}.aside-content{    max-width:380px;    min-width:300px;}.recent-posts{  width:auto!important;}@media screen and (max-width: 900px){    .card-widget:not(#card-toc){        display:none!important;    }}.task-list-item{  list-style: none;}h1, h2, h3, h4, h5, h6, .article-title, .post-title, .toc, .content, a{  font-family: 'FiraCode-Light', monospace;}/* background */#web_bg{  background: linear-gradient(120deg, #84fab0, #8fd3f4);}[data-theme="dark"] #web_bg{  /* background: linear-gradient(120deg, #16592b, #2b5d85); */  background: black}[data-theme="dark"] #web_bg::before{  background: none;}[data-theme='dark'] #article-container pre > code{  background: none;}#article-container code{  background: #d9edf7;  color: #b31100;}[data-theme='dark'] #article-container code{  background: #222427;  color: #ff9286;}/* in card_tags.pug *//* .card-tag-cloud a{  color: #6d6262 !important;} */]]></content>
       
     </entry>
     
@@ -1378,11 +1416,22 @@
     
     
     <entry>
-      <title>番谈</title>
-      <link href="/%E7%95%AA%E8%B0%88/index.html"/>
-      <url>/%E7%95%AA%E8%B0%88/index.html</url>
+      <title>作品评论</title>
+      <link href="/%E4%BD%9C%E5%93%81%E8%AF%84%E8%AE%BA/index.html"/>
+      <url>/%E4%BD%9C%E5%93%81%E8%AF%84%E8%AE%BA/index.html</url>
       
-        <content type="html"><![CDATA[<h2 id="Preface">Preface</h2><p>在人间拾取柴火, 无意间奇遇古树, 深根足以撼人心, 繁叶足以造幽静.<br>枯柴不枯, 只因古树.</p><h2 id="Start-up">Start up</h2><h3 id="Charlotte">Charlotte</h3><p>我对拯救世界无感, 但是使命感责任感则是我这个阶段的主要思想<br>其中透露出的对世界的使命感和责任感, 以及特殊能力所来带的令人激动的战斗与坚守</p><p>可惜的是, 不知道是急着结尾还是如何, 感觉最后一段夺取所有能力者的过程有点过于顺利和急促了.<br>(白柳今后会怎样呢?看来完全就是为剧情服务的角色了…)</p><p>从特殊化回归到正常化, 总有点从热烈的夏天转为清净的秋天的奇妙的感觉</p><div class="note info modern"><p>一切都已结束, 归于虚无, 所有的一切将只存于深邃记忆中<br>归于平静的田园, 稻香吹, 黄昏被我们守候</p></div><p>我喜欢这种不娇柔造作的感觉, 喜欢奈绪这种平静的理智(尽管痛苦深埋)</p><h3 id="Re-Creators">Re: Creators</h3><div class="note info modern"><p>如此复杂的种种情愫, 星空一般, 绚丽而使人不知觉地回味<br>让我复仇, 以世界为敌! 让我释怀, 以你为种! 生根发芽, 根植心中!</p></div><p>很新奇的作品, 所传达的世界观和有意思, 有种&quot;元动漫&quot;(简单来说就是自我指涉, 自我&quot;思考&quot;)的感觉了</p><p>世上从来没有正义(对错), 只有不断变化着的敌人和盟友<br><strong>我是如此地希望 阿尔泰尔 可以毁掉那个世界</strong><br>不过 岛崎刹那 出现了, 那一刻, 大概可以放下了, 去找寻一个空旷之地吧!<br>无论如何, 这绝对是最好的结局, 使我感怀的结局!</p><div class="note info modern"><p>与我想的毫无偏差, 无论真假, 所有的行动都是为了目标而服务的!<br>不要在追寻目标的时候忘记它了! 那多么可悲?!<br>这的确是可歌可泣的使人割裂的道理啊!</p></div><div class="note info modern"><p>以此做结: 希望在那个世界, 不再有其他杂碎干扰, 一心投身于乐趣, 去创造, 去实现!<br>不被他人看到也无妨, 时间将证明一切, 释怀一切.</p></div><h3 id="人类衰退之后">人类衰退之后</h3><blockquote><p>读小说中… 稍后再评</p></blockquote><h3 id="幼女战记">幼女战记</h3><!-- 真是讽刺, 被自己女儿送的枪杀了 -->]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" href="/作品评论/s.css"><link rel="stylesheet" href="s.css"><h2 id="Preface">Preface</h2><p>在人间拾取柴火, 无意间奇遇古树, 深根足以撼人心, 繁叶足以造幽静.<br>枯柴不枯, 只因古树.</p><h2 id="Start-up">Start up</h2><h3 id="Charlotte">Charlotte</h3><p>我对拯救世界无感, 但是使命感责任感则是我这个阶段的主要思想<br>其中透露出的对世界的使命感和责任感, 以及特殊能力所来带的令人激动的战斗与坚守</p><p>可惜的是, 不知道是急着结尾还是如何, 感觉最后一段夺取所有能力者的过程有点过于顺利和急促了.<br>(白柳今后会怎样呢?看来完全就是为剧情服务的角色了…)</p><p>从特殊化回归到正常化, 总有点从热烈的夏天转为清净的秋天的奇妙的感觉</p><div class="note info modern"><p>一切都已结束, 归于虚无, 所有的一切将只存于深邃记忆中<br>归于平静的田园, 稻香吹, 黄昏被我们守候</p></div><p>我喜欢这种不娇柔造作的感觉, 喜欢奈绪这种平静的理智(尽管痛苦深埋)</p><h3 id="Re-Creators">Re: Creators</h3><div class="note info modern"><p>如此复杂的种种情愫, 星空一般, 绚丽而使人不知觉地回味<br>让我复仇, 以世界为敌! 让我释怀, 以你为种! 生根发芽, 根植心中!</p></div><p>很新奇的作品, 所传达的世界观和有意思, 有种&quot;元动漫&quot;(简单来说就是自我指涉, 自我&quot;思考&quot;)的感觉了</p><p>世上从来没有正义(对错), 只有不断变化着的敌人和盟友<br><strong>我是如此地希望 阿尔泰尔 可以毁掉那个世界</strong><br>不过 岛崎刹那 出现了, 那一刻, 大概可以放下了, 去找寻一个空旷之地吧!<br>无论如何, 这绝对是最好的结局, 使我感怀的结局!</p><div class="note info modern"><p>与我想的毫无偏差, 无论真假, 所有的行动都是为了目标而服务的!<br>不要在追寻目标的时候忘记它了! 那多么可悲?!<br>这的确是可歌可泣的使人割裂的道理啊!</p></div><div class="note info modern"><p>以此做结: 希望在那个世界, 不再有其他杂碎干扰, 一心投身于乐趣, 去创造, 去实现!<br>不被他人看到也无妨, 时间将证明一切, 释怀一切.</p></div><h3 id="人类衰退之后">人类衰退之后</h3><div class="xcard"><img src="./index/人类衰退之后.png" alt="" class="cover"><div class="content">  <span class="head">    <span class="title">人类衰退之后</span>    <span class="ref"><a href="https://www.bilibili.com/bangumi/play/ss703" target="_blank">bilibili</a></span>  </span>  <span class="desc">一部很有趣的 `黑色童话`, 讲故事的方式比较平缓, 但是就是在这种看似平缓的节奏中引入了很多对当下社会的思考与映射, 值得我们深思!</span></div><div style="clear: both"></div></div><h3 id="幼女战记">幼女战记</h3><!-- 真是讽刺, 被自己女儿送的枪杀了 --><div class="xcard"><img src="./index/幼女战记.jpg" alt="" class="cover"><div class="content">  <span class="head">    <span class="title">幼女战记</span>    <span class="ref"><a href="https://mzh.moegirl.org.cn/%E5%B9%BC%E5%A5%B3%E6%88%98%E8%AE%B0" target="_blank">moeWiki</a></span>  </span>  <span class="desc"></span></div><div style="clear: both"></div></div><div class="note info modern"><p>Ref: <a href="https://mzh.moegirl.org.cn/File:Yojo_Senki_Movie_Teaser.jpg">https://mzh.moegirl.org.cn/File:Yojo_Senki_Movie_Teaser.jpg</a></p></div><h2 id="成文分析计划">成文分析计划</h2><ul class="contains-task-list"><li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 人类衰退之后</li><li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox"> 幼女战记</li></ul>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/%E4%BD%9C%E5%93%81%E8%AF%84%E8%AE%BA/s.css"/>
+      <url>/%E4%BD%9C%E5%93%81%E8%AF%84%E8%AE%BA/s.css</url>
+      
+        <content type="html"><![CDATA[.xcard {  width: 100%;  /* max-width: 800px; */  height: fit-content;  padding: 20px;  margin: 10px 0px;  box-sizing: border-box;  background: #1b1b1b;  border-radius: 8px;  line-height: normal;}.xcard .cover {  width: 30%;  border-radius: 8px;  object-fit: contain;  margin-right: 16px !important;  user-select: none;  height: fit-content;  float: left;}.xcard .content {  width: 100%;}.xcard .content .head {  font-family: "Fira Code";  display: flex;  justify-content: space-between;  padding-bottom: 7px;}.xcard .content .head .title {  color: #ddcfcf;  font-size: 2rem;  white-space: nowrap;  overflow: hidden;}.xcard .content .head .ref {  font-size: small;  align-self: flex-end;  user-select: none;}.xcard .content .head .ref :visited, .xcard .content .head .ref :active {  color: rgb(47, 218, 248);}.xcard .content .desc {  color: #ddcfcf;  font-family: monospace, "Fira Code";  overflow: hidden;}.xcard ::selection {  background-color: saddlebrown;}body {  margin: none;  display: flex;  justify-content: center;  align-items: center;  flex-direction: column;  height: 100vh;}/*# sourceMappingURL=s.css.map */]]></content>
       
     </entry>
     
