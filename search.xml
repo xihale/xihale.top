@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>WeChat Web(pwa)</title>
+      <link href="/WeChat-Web-pwa/"/>
+      <url>/WeChat-Web-pwa/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Preface">Preface</h2><p>微信在 <code>Linux</code> 的各种版本都不好用, 不过我平常也不太用得到, 网页端就足以满足我的需求了</p><h2 id="Content">Content</h2><h3 id="Over-the-limitation-of-wechat-web">Over the limitation of wechat web</h3><h4 id="Original">Original</h4><p>你可以选择直接使用原作者的方法, 去下载他的 <code>Release</code> 打包好的文件, 然后解压到一个目录里, 打开开发者模式, 将那个目录拖动到 <code>extension page</code> 里即可</p><blockquote><p>仓库地址<a href="https://github.com/lqzhgood/wechat-need-web">wechat-need-web</a></p></blockquote><h4 id="mine">mine</h4><p>我用 <code>chromium</code> 将这个文件夹打包成 <code>crx</code> 格式了, 直接拖动安装即可</p><p><a href="https://github.com/xihale/wechat-need-web/releases/download/1.1.1/wechat_need.crx">https://github.com/xihale/wechat-need-web/releases/download/1.1.1/wechat_need.crx</a></p><h3 id="Pwa-Optional">Pwa(Optional)</h3><p>夹在众多页面里面太难看了, 所以我写了个浇水代码(<code>油猴脚本</code>), 让浏览器将其识别成 <code>pwa</code> 应用了<br>其实 <code>pwa</code> 的好处好有很多, 实在是闲得没事干就去加一下</p><p>有空就直接加在 <code>wechat-need-web</code> 插件里面, 那样也省事</p><p><a href="https://greasyfork.org/zh-CN/scripts/489391-wechat-pwa">wechat-pwa @ greasyfork</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> arch </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Kindle Highlights</title>
       <link href="/Kindle-Highlights/"/>
       <url>/Kindle-Highlights/</url>
@@ -996,9 +1017,9 @@
       
         <tags>
             
-            <tag> aur </tag>
-            
             <tag> arch </tag>
+            
+            <tag> aur </tag>
             
         </tags>
       
